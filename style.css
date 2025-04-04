@@ -61,6 +61,7 @@ h1 {
     margin-block-start: 0;
     margin-block-end: 0;
     font-family: "Viga", sans-serif;
+    text-align: center;
 }
 .button {
     background-color: #b48a4e;
@@ -74,14 +75,7 @@ h1 {
     justify-content: space-between;
     padding: 80px 80px;
     background-color: black;
-}
-.category img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 16px;
-    margin: 0;
-    justify-content: space-around;
+    gap: 16px;
 }
 
 .category  {
@@ -92,8 +86,17 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     gap: 8px;
+    flex: 1;
 }
 
+.category img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    margin: 16px;
+    margin: 0;
+    justify-content: space-around;
+}
 .buy-ticket {
     background-color: #272727;
     display: flex;
@@ -194,3 +197,67 @@ input::placeholder {
 .footer-form {
     display: flex;
 }
+
+@media(max-width: 950px) {
+    .buy-ticket {
+        flex-direction: column;
+    }
+
+    .buy-ticket img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .festival-info {
+        padding: 40px;
+        height: 200px;
+        text-align: center;
+    } 
+    .separater {
+        display: none;
+    }
+
+    .buy-ticket-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+}
+
+@media(max-width: 700px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+    
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .full-width-mobile {
+        width: 100%;
+    }
+
+    .footer-left {
+        text-align: center;
+        margin-bottom: 32px;
+        padding-right: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .section-category {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
